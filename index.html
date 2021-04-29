@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><title>Parcel Sandbox</title><meta charset="UTF-8"></head><body> <table class="table table-hover table-striped"> <thead> <tr> <th scope="col"> <span>Description</span> </th> <th scope="col" class="text-right"> <span>Amount</span> </th> <th scope="col"> <span></span> </th> </tr> </thead> <tbody id="items"></tbody> </table> <div id="app"></div> <script type="text/x-handlebars-template" id="tmpl_table">
+      {{#if this.items}}
+        {{#each this.items}}
+          <tr class="recordviews-row">
+            <td class="recordviews-number">
+              <span class="recordviews-value">
+                {{name}}
+              </span>
+            </td>
+            <td class="recordviews-amount text-right">
+              <span class="recordviews-value">
+                {{amount}}
+              </span>
+            </td>
+            <td class="recordviews-status text-right">
+              <span class="recordviews-value">
+                <a
+                  class="btn btn-primary"
+                  href="https://store.iprotech.com/app/site/backend/additemtocart.nl?buyid={{
+                    buyId
+                  }}&itemid={{itemId}}&qty=1&custcol_indata={{
+                    tcpPlanId
+                  }}&custcol_purchase_type_item_option=&custcol_ava_udf1=&custcol_ava_item={{
+                    avaItem
+                  }}&custcol_third_party_transaction_id=&custcol_ava_incomeaccount={{
+                    avaIncomeAccount
+                  }}&custcol_ava_taxcodemapping={{
+                    avaTaxCodeMapping
+                  }}&custcol_ava_udf2=&custcol_ava_upccode=&custcol_ava_pickup={{
+                    avaPickup
+                  }}&whence=#cart"
+                >
+                  Add To Cart
+                </a>
+              </span>
+            </td>
+          </tr>
+        {{/each}}
+      {{else}}
+        <tr>
+          <td colspan="3">
+            Invalid TCP Plan ID
+          </td>
+        </tr>
+      {{/if}}
+    </script> <script src="/csb-5ps87/src.72ac86e9.js"></script> </body></html>
